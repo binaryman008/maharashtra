@@ -30,46 +30,48 @@ with open('mca_maharashtra.csv', 'r', encoding='latin-1') as csv_file:
                         pba_dict[string][4] += 1
                     pba_dict[string][5] += 1
 # print(year_dict)
-years = []
-for i in pba_dict.keys():
-    years.append(i)
-years.sort()
-# print(pba_dict)
-sorted_pba_dict = sorted(pba_dict.items(), key=lambda t: t[0])
-date = []
-pba1 = []
-pba2 = []
-pba3 = []
-pba4 = []
-pba5 = []
-pba6 = []
-for i in range(len(sorted_pba_dict)):
-    date.append(sorted_pba_dict[i][0])
-    pba1.append(sorted_pba_dict[i][1][0])
-    pba2.append(sorted_pba_dict[i][1][1])
-    pba3.append(sorted_pba_dict[i][1][2])
-    pba4.append(sorted_pba_dict[i][1][3])
-    pba5.append(sorted_pba_dict[i][1][4])
-    pba6.append(sorted_pba_dict[i][1][5])
 
-x_indexes = np.arange(len(years))
-width = 0.15
-str1 = "Agriculture and Allied Activities"
-str2 = "Trading"
-str3 = "Manufacturing (Metals & Chemicals, and products thereof)"
-str4 = "Finance"
-str5 = "Construction"
-str6 = "Year"
-plt.bar(x_indexes, pba1, width=width, color="#FF5733", label=str1)
-plt.bar(x_indexes + width, pba2, width=width, color="#FFF633", label=str2)
-plt.bar(x_indexes-width, pba3, width=width, color="#8AFF33", label=str3)
-plt.bar(x_indexes - width*2, pba4, width=width, color="#33FFCE", label=str4)
-plt.bar(x_indexes + width*2, pba5, width=width, color="#339FFF", label=str5)
-plt.bar(x_indexes + width*3, pba6, width=width, color="#7433FF", label=str6)
-plt.legend()
-plt.xticks(ticks=x_indexes, labels=years)
-plt.xlabel("Years")
-plt.ylabel("Total Companies")
-plt.title("Companies from 1990 to 1999 in Maharashtra")
-plt.tight_layout()
-plt.savefig("graph4.png")
+if __name__ == '__main__':
+    years = []
+    for i in pba_dict.keys():
+        years.append(i)
+    years.sort()
+    # print(pba_dict)
+    sorted_pba_dict = sorted(pba_dict.items(), key=lambda t: t[0])
+    date = []
+    pba1 = []
+    pba2 = []
+    pba3 = []
+    pba4 = []
+    pba5 = []
+    pba6 = []
+    for i in range(len(sorted_pba_dict)):
+        date.append(sorted_pba_dict[i][0])
+        pba1.append(sorted_pba_dict[i][1][0])
+        pba2.append(sorted_pba_dict[i][1][1])
+        pba3.append(sorted_pba_dict[i][1][2])
+        pba4.append(sorted_pba_dict[i][1][3])
+        pba5.append(sorted_pba_dict[i][1][4])
+        pba6.append(sorted_pba_dict[i][1][5])
+
+    x_indexes = np.arange(len(years))
+    width = 0.15
+    str1 = "Agriculture and Allied Activities"
+    str2 = "Trading"
+    str3 = "Manufacturing (Metals & Chemicals, and products thereof)"
+    str4 = "Finance"
+    str5 = "Construction"
+    str6 = "Year"
+    plt.bar(x_indexes, pba1, width=width, color="yellow", label=str1)
+    plt.bar(x_indexes + width, pba2, width=width, color="red", label=str2)
+    plt.bar(x_indexes-width, pba3, width=width, color="violet", label=str3)
+    plt.bar(x_indexes - width*2, pba4, width=width, color="grey", label=str4)
+    plt.bar(x_indexes + width*2, pba5, width=width, color="green", label=str5)
+    plt.bar(x_indexes + width*3, pba6, width=width, color="pink", label=str6)
+    plt.legend()
+    plt.xticks(ticks=x_indexes, labels=years)
+    plt.xlabel("Years")
+    plt.ylabel("Total Companies")
+    plt.title("Companies from 1990 to 1999 in Maharashtra")
+    plt.tight_layout()
+    plt.savefig("graph4.png")

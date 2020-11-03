@@ -4,7 +4,7 @@ To convert raw open data into plots, that tell a story on the state of company r
 
 The data can be downloaded from [here](https://data.gov.in/resources/company-master-data-maharashtra-upto-21st-april-2018)
 
-All the requirements and python dependencies can be installed by running requirements.txt
+All the requirements and python dependencies can be installed by running **requirements.txt**
 
 There are 4 problem statements :-
 1. Histogram of Authorized Cap
